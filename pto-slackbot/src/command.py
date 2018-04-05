@@ -1,7 +1,7 @@
 class Command(object):
     def __init__(self):
         self.commands = {
-            "jump" : self.jump,
+            "schedule pto" : self.schedule_pto,
             "help" : self.help
         }
 
@@ -15,7 +15,7 @@ class Command(object):
 
         return response
 
-    def jump(self):
+    def schedule_pto(self):
         return "Kris Kross will make you jump jump"
 
     def help(self):
