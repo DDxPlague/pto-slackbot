@@ -1,9 +1,10 @@
 FROM python:alpine
 
-WORKDIR /usr/src/app
+WORKDIR /bin/pto-slackbot/src/
 
+RUN apk add --no-cache build-base gcc
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-ADD pto-slackbot /bin/pto-slackbot
+COPY pto-slackbot /bin/pto-slackbot
