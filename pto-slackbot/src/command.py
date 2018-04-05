@@ -1,12 +1,13 @@
 class Command(object):
     def __init__(self):
         self.commands = {
-            "schedule pto" : self.schedule_pto,
-            "help" : self.help
+            "help" : self.help,
+            "schedule pto" : self.schedule_pto
         }
 
     def handle_command(self, user, command):
-        response = "<@" + user + ">: "
+        #response = "<@" + user + ">: "
+        response = ""
 
         if command in self.commands:
             response += self.commands[command]()
@@ -15,13 +16,15 @@ class Command(object):
 
         return response
 
-    def schedule_pto(self):
-        return "Kris Kross will make you jump jump"
-
     def help(self):
         response = "Currently I support the following commands:\r\n"
+        response += "```"
 
         for command in self.commands:
             response += command + "\r\n"
 
+        response += "```"
         return response
+
+    def schedule_pto(self):
+        return "Working on building this functionality."
